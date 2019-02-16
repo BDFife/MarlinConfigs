@@ -756,71 +756,71 @@
 #define MESH_TEST_HOTEND_TEMP  205.0  // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
 #define MESH_TEST_BED_TEMP      60.0  // (°C) Default bed temperature for the G26 Mesh Validation Tool.
   #endif
-
 #endif
 
-#if ENABLED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
+#if ENAB8LED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
-// Set the number of grid points per dimension.
+	// Set the number of grid points per dimension.
   #define GRID_MAX_POINTS_X 3
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
-// Set the boundaries for probing (where the probe can reach).
-//#define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
-//#define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
-//#define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
-//#define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
+	// Set the boundaries for probing (where the probe can reach).
+	//#define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
+	//#define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
+	//#define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
+	//#define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
 
-// Probe along the Y axis, advancing X after each column
-//#define PROBE_Y_FIRST
+	// Probe along the Y axis, advancing X after each column
+	//#define PROBE_Y_FIRST
 
-#if ENABLED(AUTO_BED_LEVELING_BILINEAR)
+	#if ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
-// Beyond the probed grid, continue the implied tilt?
-// Default is to maintain the height of the nearest edge.
-//#define EXTRAPOLATE_BEYOND_GRID
+		// Beyond the probed grid, continue the implied tilt?
+		// Default is to maintain the height of the nearest edge.
+		//#define EXTRAPOLATE_BEYOND_GRID
 
-//
-// Experimental Subdivision of the grid by Catmull-Rom method.
-// Synthesizes intermediate points to produce a more detailed mesh.
-//
-//#define ABL_BILINEAR_SUBDIVISION
-#if ENABLED(ABL_BILINEAR_SUBDIVISION)
-// Number of subdivisions between probe points
-      #define BILINEAR_SUBDIVISIONS 3
-    #endif
-
-  #endif
+		//
+		// Experimental Subdivision of the grid by Catmull-Rom method.
+		// Synthesizes intermediate points to produce a more detailed mesh.
+		//
+		//#define ABL_BILINEAR_SUBDIVISION
+		#if ENABLED(ABL_BILINEAR_SUBDIVISION)
+			// Number of subdivisions between probe points
+			#define BILINEAR_SUBDIVISIONS 3
+		#endif
+	#endif
 
 #elif ENABLED(AUTO_BED_LEVELING_UBL)
 
-//===========================================================================
-//========================= Unified Bed Leveling ============================
-//===========================================================================
+	//===========================================================================
+	//========================= Unified Bed Leveling ============================
+	//===========================================================================
 
-//#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
+	//#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-#define MESH_INSET 1              // Set Mesh bounds as an inset region of the bed
-#define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
+	#define MESH_INSET 1              // Set Mesh bounds as an inset region of the bed
+	#define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
-#define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
-#define UBL_SAVE_ACTIVE_ON_M500   // Save the currently active mesh in the current slot on M500
+	#define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
+	#define UBL_SAVE_ACTIVE_ON_M500   // Save the currently active mesh in the current slot on M500
 
-//#define UBL_Z_RAISE_WHEN_OFF_MESH 2.5 // When the nozzle is off the mesh, this value is used
-// as the Z-Height correction value.
+	//#define UBL_Z_RAISE_WHEN_OFF_MESH 2.5 // When the nozzle is off the mesh, this value is used
+	// as the Z-Height correction value.
 
 #elif ENABLED(MESH_BED_LEVELING)
 
-//===========================================================================
-//=================================== Mesh ==================================
-//===========================================================================
+	//===========================================================================
+	//=================================== Mesh ==================================
+	//===========================================================================
 
-#define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
-#define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
+	#define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
+	#define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
-//#define MESH_G28_REST_ORIGIN // After homing allLEVELING
+	//#define MESH_G28_REST_ORIGIN // After homing allLEVELING
+
+#endif // BED_LEVELING
 
 /**
  * Points to probe for all 3-point Leveling procedures.
