@@ -1,6 +1,6 @@
+
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
-
 #define CONFIGURATION_H_VERSION 010109
 
 // @section info
@@ -119,11 +119,11 @@
 
 #define TEMP_SENSOR_0 1
 // Temp Sensor 1 may actually be the bed sensor. 
-#define TEMP_SENSOR_1 1
+#define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
-#define TEMP_SENSOR_BED 0
+#define TEMP_SENSOR_BED 1
 #define TEMP_SENSOR_CHAMBER 0
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
