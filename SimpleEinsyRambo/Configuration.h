@@ -144,7 +144,6 @@
  */
 
 #define TEMP_SENSOR_0 1
-// Temp Sensor 1 may actually be the bed sensor. 
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -430,7 +429,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 96.5 } // Dr.Phil's settings
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 160, 400, 96.5 } // Dr.Phil's settings
 
 /**
  * Default Max Feed Rate (mm/s)
