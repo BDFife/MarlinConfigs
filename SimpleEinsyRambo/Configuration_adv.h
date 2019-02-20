@@ -1067,37 +1067,37 @@
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
   #define X_CURRENT          700  // rms current in mA. Multiply by 1.41 for peak current.
-  #define X_MICROSTEPS        64  // 0..256
+  #define X_MICROSTEPS       128  // 0..256
 
   #define Y_CURRENT          700
-  #define Y_MICROSTEPS        64
+  #define Y_MICROSTEPS       128
 
   #define Z_CURRENT          700
-  #define Z_MICROSTEPS        64
+  #define Z_MICROSTEPS       128
 
   #define X2_CURRENT         700
-  #define X2_MICROSTEPS       64
+  #define X2_MICROSTEPS      128
 
   #define Y2_CURRENT         700
-  #define Y2_MICROSTEPS       64
+  #define Y2_MICROSTEPS      128
 
   #define Z2_CURRENT         700
-  #define Z2_MICROSTEPS       64
+  #define Z2_MICROSTEPS      128
 
   #define E0_CURRENT         700
-  #define E0_MICROSTEPS       64
+  #define E0_MICROSTEPS      128
 
   #define E1_CURRENT         700
-  #define E1_MICROSTEPS       64
+  #define E1_MICROSTEPS      128
 
   #define E2_CURRENT         700
-  #define E2_MICROSTEPS       64
+  #define E2_MICROSTEPS      128
 
   #define E3_CURRENT         700
-  #define E3_MICROSTEPS       64
+  #define E3_MICROSTEPS      128
 
   #define E4_CURRENT         700
-  #define E4_MICROSTEPS       64
+  #define E4_MICROSTEPS      128
 
   /**
    * Use software SPI for TMC2130.
