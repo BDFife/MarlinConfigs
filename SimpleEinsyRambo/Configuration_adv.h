@@ -199,7 +199,7 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-#define E0_AUTO_FAN_PIN FAN_PIN // use fan0 as extruder fan.
+#define E0_AUTO_FAN_PIN 8 // same as FAN_PIN in pins_EINSY_RAMBO.h
 #define E1_AUTO_FAN_PIN -1
 #define E2_AUTO_FAN_PIN -1
 #define E3_AUTO_FAN_PIN -1
