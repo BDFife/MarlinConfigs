@@ -1066,37 +1066,37 @@
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
-  #define X_CURRENT          750  // rms current in mA. Multiply by 1.41 for peak current.
+  #define X_CURRENT          800  // rms current in mA. Multiply by 1.41 for peak current.
   #define X_MICROSTEPS       128  // 0..256
 
-  #define Y_CURRENT          750
+  #define Y_CURRENT          800  // max current for EINSY RAMBO is 960mA
   #define Y_MICROSTEPS       128
 
-  #define Z_CURRENT          750
+  #define Z_CURRENT          800
   #define Z_MICROSTEPS       128
 
-  #define X2_CURRENT         750
+  #define X2_CURRENT         800
   #define X2_MICROSTEPS      128
 
-  #define Y2_CURRENT         750
+  #define Y2_CURRENT         800
   #define Y2_MICROSTEPS      128
 
-  #define Z2_CURRENT         750
+  #define Z2_CURRENT         800
   #define Z2_MICROSTEPS      128
 
-  #define E0_CURRENT         750
+  #define E0_CURRENT         800
   #define E0_MICROSTEPS      128
 
-  #define E1_CURRENT         750
+  #define E1_CURRENT         800
   #define E1_MICROSTEPS      128
 
-  #define E2_CURRENT         750
+  #define E2_CURRENT         800
   #define E2_MICROSTEPS      128
 
-  #define E3_CURRENT         750
+  #define E3_CURRENT         800
   #define E3_MICROSTEPS      128
 
-  #define E4_CURRENT         750
+  #define E4_CURRENT         800
   #define E4_MICROSTEPS      128
 
   /**
