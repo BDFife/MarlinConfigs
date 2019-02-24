@@ -1,0 +1,28 @@
+; == Initialize == 
+G21       ;use mm as units 
+G90       ;absolute positioning
+M82       ;set extruder to absolute mode
+; == Home Printer ==
+M150 B255 P255 R0 U0 ;set LEDs blue
+G28 X0 Y0 ;home X/Y
+G0 X50 Y50 F1200 ;move to mid-plate before probing Z
+G28 Z0    ;home Z
+; == Tram == 
+M150 B0 P255 R255 U255 ;set LEDs yellow
+G29       ;initiate auto bed leveling sequence
+; == Heat == 
+M150 B0 P255 R255 U165 ;set LEDs orange
+M190 S{material_bed_temperature} ;pause until print bed at temp
+M150 B0 P255 R255 U0 ;set LEDs red
+M109 S{material_print_temperature} ;pause until hotend at temp
+; == Prime == 
+M150 B0 P255 R0 U255 ;set LEDs green
+G92 E0 ;reset extruder origin
+G0 X10 Y130 Z0.3 F6000;travel to X=10mm, Y=130mm, Z=0.3mm
+G1 X200 E12 F1200 ;extrude 12mm of filament while moving to X=200mm
+G0 Y140 F6000;travel to Y=140
+G1 X110 E18 F1200 ;extrude 6mm more filament while moving back to X=110mm
+G0 Z1 ;raise to Z=1mm
+G92 E0 ;reset extruder origin
+M150 B255 P255 R255 U255 W255 ;set LEDs white
+; == Start Print ==
