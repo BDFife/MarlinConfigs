@@ -1,0 +1,10 @@
+; === End Print ===
+M104 S0     ;extruder heater off
+M140 S0     ;heated bed heater off (if you have it)
+M106 S0     ;fan off
+G91         ;relative positioning
+G1 E-1 F300 ;retract the filament a bit
+G1 Z+1 E-5 F9000 ;move Z up a bit and retract even more
+G28 X0 Y0   ;home X/Y, so the head is out of the way
+M84         ;steppers off
+G90         ;absolute positioning
