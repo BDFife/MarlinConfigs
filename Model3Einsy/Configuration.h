@@ -8,9 +8,9 @@
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "(Brian Fife, test config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Brian Fife, Model3 test config)" // Who made the changes.
 #define SHOW_BOOTSCREEN
-#define STRING_SPLASH_LINE1 0.0.4               // will be shown during bootup in line 1
+#define STRING_SPLASH_LINE1 0.0.1               // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 SODESNE.COM         // will be shown during bootup in line 2
 
 // @section machine
@@ -46,7 +46,7 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-#define CUSTOM_MACHINE_NAME "SimpleEinsy"
+#define CUSTOM_MACHINE_NAME "Model3Einsy"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -1490,7 +1490,7 @@
 #endif
 
 // Support for Adafruit Neopixel LED driver
-#define NEOPIXEL_LED
+//#define NEOPIXEL_LED
 #if ENABLED(NEOPIXEL_LED)
   #define NEOPIXEL_TYPE   NEO_GRBW 	// NEO_GRBW / NEO_GRB - four/three channel driver type (defined in Adafruit_NeoPixel.h)
   #define NEOPIXEL_PIN    76        // LED driving pin on motherboard 4 => D4 (EXP2-5 on Printrboard) / 30 => PC7 (EXP3-13 on Rumba)

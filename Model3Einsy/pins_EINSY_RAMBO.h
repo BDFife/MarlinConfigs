@@ -87,15 +87,17 @@
 #define X_ENABLE_PIN       29
 #define X_CS_PIN           41
 
-#define Y_STEP_PIN         36
-#define Y_DIR_PIN          48
-#define Y_ENABLE_PIN       28
-#define Y_CS_PIN           39
+// Swapping Z and Y on Model 3
+#define Y_STEP_PIN         35
+#define Y_DIR_PIN          47
+#define Y_ENABLE_PIN       27
+#define Y_CS_PIN           67
 
-#define Z_STEP_PIN         35
-#define Z_DIR_PIN          47
-#define Z_ENABLE_PIN       27
-#define Z_CS_PIN           67
+// Swapping Z and Y on Model 3 
+#define Z_STEP_PIN         36
+#define Z_DIR_PIN          48
+#define Z_ENABLE_PIN       28
+#define Z_CS_PIN           39
 
 #define E0_STEP_PIN        34
 #define E0_DIR_PIN         43
