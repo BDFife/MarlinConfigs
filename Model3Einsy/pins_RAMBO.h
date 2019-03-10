@@ -127,9 +127,11 @@
 #define HEATER_2_PIN        6
 #define HEATER_BED_PIN      3
 
-#ifndef FAN_PIN
-  #define FAN_PIN           8
-#endif
+
+// Disabling fan_pin, defined in Config_adv.h 
+//#ifndef FAN_PIN
+//  #define FAN_PIN           8
+//#endif
 #define FAN1_PIN            6
 #define FAN2_PIN            2
 
