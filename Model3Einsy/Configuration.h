@@ -10,7 +10,7 @@
 // build by the user have been successfully uploaded into firmware.
 #define STRING_CONFIG_H_AUTHOR "(Brian Fife, Model3 test config)" // Who made the changes.
 #define SHOW_BOOTSCREEN
-#define STRING_SPLASH_LINE1 0.0.1               // will be shown during bootup in line 1
+#define STRING_SPLASH_LINE1 0.5                 // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 SODESNE.COM         // will be shown during bootup in line 2
 
 // @section machine
@@ -566,7 +566,7 @@
 
 #define X_PROBE_OFFSET_FROM_EXTRUDER 20  // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.5   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 30
