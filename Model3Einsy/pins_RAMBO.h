@@ -134,7 +134,8 @@
 //#endif
 //#define FAN1_PIN            6
 #define FAN_PIN             6
-#define FAN2_PIN            2
+// FAN2_PIN is set in Config_adv.h 
+//#define FAN2_PIN            2
 
 //
 // Misc. Functions
