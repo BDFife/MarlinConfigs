@@ -1066,37 +1066,37 @@
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
-  #define X_CURRENT          800  // rms current in mA. Multiply by 1.41 for peak current.
+  #define X_CURRENT          950  // rms current in mA. Multiply by 1.41 for peak current.
   #define X_MICROSTEPS        16  // 0..256
 
-  #define Y_CURRENT          800  // max current for EINSY RAMBO is 960mA
+  #define Y_CURRENT          950  // max current for EINSY RAMBO is 960mA
   #define Y_MICROSTEPS        16
 
-  #define Z_CURRENT          800
+  #define Z_CURRENT          950
   #define Z_MICROSTEPS        16
 
-  #define X2_CURRENT         800
+  #define X2_CURRENT         950
   #define X2_MICROSTEPS       16
 
-  #define Y2_CURRENT         800
+  #define Y2_CURRENT         950
   #define Y2_MICROSTEPS       16
 
-  #define Z2_CURRENT         800
+  #define Z2_CURRENT         950
   #define Z2_MICROSTEPS       16
 
-  #define E0_CURRENT         800
+  #define E0_CURRENT         950
   #define E0_MICROSTEPS       16
 
-  #define E1_CURRENT         800
+  #define E1_CURRENT         950
   #define E1_MICROSTEPS       16
 
-  #define E2_CURRENT         800
+  #define E2_CURRENT         950
   #define E2_MICROSTEPS       16
 
-  #define E3_CURRENT         800
+  #define E3_CURRENT         950
   #define E3_MICROSTEPS       16
 
-  #define E4_CURRENT         800
+  #define E4_CURRENT         950
   #define E4_MICROSTEPS       16
 
   /**
@@ -1113,7 +1113,7 @@
    * Use Trinamic's ultra quiet stepping mode.
    * When disabled, Marlin will use spreadCycle stepping mode.
    */
-  // #define STEALTHCHOP
+  #define STEALTHCHOP
 
   /**
    * Monitor Trinamic TMC2130 and TMC2208 drivers for error conditions,

@@ -8,9 +8,9 @@
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "(Brian Fife, test config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Brian Fife, Simple Trinamic)" // Who made the changes.
 #define SHOW_BOOTSCREEN
-#define STRING_SPLASH_LINE1 0.0.4               // will be shown during bootup in line 1
+#define STRING_SPLASH_LINE1 0.0.5               // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 SODESNE.COM         // will be shown during bootup in line 2
 
 // @section machine
@@ -22,7 +22,7 @@
  *
  * :[0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT 0
+#define SERIAL_PORT 1
 
 /**
  * This setting determines the communication speed of the printer.
@@ -444,7 +444,8 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 300, 5000 } // Dr.Phil's settings
+//#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 300, 5000 } // Dr.Phil's settings
+#define DEFAULT_MAX_ACCELERATION      { 600, 600, 300, 2000 } // Adjusted for Trinamic
 
 /**
  * Default Acceleration (change/s) change = mm/s
