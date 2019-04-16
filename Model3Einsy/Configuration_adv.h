@@ -452,7 +452,7 @@
 
 // X Y Z E0 E1 digipot channels to stepper driver mapping
 
-#define DIGIPOT_MOTOR_CURRENT { 150, 150, 80, 135, 150 }   // Values 0-255 (RAMBO 135 = ~0.75A, 185 = ~1A)
+#define DIGIPOT_MOTOR_CURRENT { 100, 100, 80, 135, 100 }   // Values 0-255 (RAMBO 135 = ~0.75A, 185 = ~1A)
 //#define DAC_MOTOR_CURRENT_DEFAULT { 70, 80, 90, 80 }    // Default drive percent - X, Y, Z, E axis
 
 // Use an I2C based DIGIPOT (e.g., Azteeg X3 Pro)
