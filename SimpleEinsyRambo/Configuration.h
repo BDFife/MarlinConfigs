@@ -436,7 +436,8 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 125, 125, 15, 25 } // Dr.Phil's settings
+//#define DEFAULT_MAX_FEEDRATE          { 125, 125, 15, 25 } // Dr.Phil's settings
+#define DEFAULT_MAX_FEEDRATE          { 125, 125, 10, 15 } // Adjusted for Trinamic
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -445,7 +446,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
 //#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 300, 5000 } // Dr.Phil's settings
-#define DEFAULT_MAX_ACCELERATION      { 600, 600, 300, 2000 } // Adjusted for Trinamic
+#define DEFAULT_MAX_ACCELERATION      { 600, 600, 150, 600 } // Adjusted for Trinamic
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -567,7 +568,7 @@
 
 #define X_PROBE_OFFSET_FROM_EXTRUDER 20  // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -3.5   // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -.35   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 30
