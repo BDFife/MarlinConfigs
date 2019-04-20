@@ -446,7 +446,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
 //#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 300, 5000 } // Dr.Phil's settings
-#define DEFAULT_MAX_ACCELERATION      { 600, 600, 150, 600 } // Adjusted for Trinamic
+#define DEFAULT_MAX_ACCELERATION      { 400, 400, 150, 600 } // Adjusted for Trinamic
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -469,8 +469,8 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                 10.0
-#define DEFAULT_YJERK                 10.0
+#define DEFAULT_XJERK                 15.0 // change from 10 trinamic
+#define DEFAULT_YJERK                 15.0 // change from 10 trinamic
 #define DEFAULT_ZJERK                  0.3
 #define DEFAULT_EJERK                  5.0
 
