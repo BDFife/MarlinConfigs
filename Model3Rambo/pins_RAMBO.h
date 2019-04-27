@@ -1,6 +1,6 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (C) 2016 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * Copyright (C) 2019 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
  * Copyright (C) 2011 Camiel Gubbels / Erik van der Zalm
@@ -41,7 +41,7 @@
  */
 
 #ifndef __AVR_ATmega2560__
-  #error "Oops!  Make sure you have 'Arduino Mega 2560' selected from the 'Tools -> Boards' menu."
+  #error "Oops! Select 'Arduino/Genuino Mega or Mega 2560' in 'Tools > Board.'"
 #endif
 
 #define BOARD_NAME "Rambo"
@@ -127,15 +127,11 @@
 #define HEATER_2_PIN        6
 #define HEATER_BED_PIN      3
 
-
-// Remapping fan1_pin to fan0, pin 8  defined in Config_adv.h 
-//#ifndef FAN_PIN
-//  #define FAN_PIN           8
-//#endif
-//#define FAN1_PIN            6
-#define FAN_PIN             6
-// FAN2_PIN is set in Config_adv.h 
-//#define FAN2_PIN            2
+#ifndef FAN_PIN
+  #define FAN_PIN           8
+#endif
+#define FAN1_PIN            6
+#define FAN2_PIN            2
 
 //
 // Misc. Functions
@@ -153,7 +149,7 @@
 // M3/M4/M5 - Spindle/Laser Control
 //
 #define SPINDLE_LASER_PWM_PIN    45   // MUST BE HARDWARE PWM
-#define SPINDLE_LASER_ENABLE_PIN 31   // Pin should have a pullup!
+#define SPINDLE_LASER_ENA_PIN    31   // Pin should have a pullup!
 #define SPINDLE_DIR_PIN          32
 
 //
@@ -179,7 +175,7 @@
     #define LCD_PINS_D6     74
     #define LCD_PINS_D7     75
 
-    #if ENABLED(VIKI2) || ENABLED(miniVIKI)
+    #if ANY(VIKI2, miniVIKI)
       #define BEEPER_PIN   44
       // NB: Panucatt's Viki 2.0 wiring diagram (v1.2) indicates that the
       //     beeper/buzzer is connected to pin 33; however, the pin used in the
