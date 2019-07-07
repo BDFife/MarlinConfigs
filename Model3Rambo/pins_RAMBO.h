@@ -133,6 +133,7 @@
 #endif
 // FAN1 is set as the extruder fan in config_adv
 //#define FAN1_PIN            6
+// FAN2 is set as the controller fan in config_adv
 //#define FAN2_PIN            2
 
 //
