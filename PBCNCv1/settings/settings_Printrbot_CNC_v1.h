@@ -91,7 +91,7 @@
 
 #define M1_MOTOR_MAP                AXIS_Z_EXTERNAL         // 1ma
 #define M1_STEP_ANGLE               1.8                     // 1sa
-#define M1_TRAVEL_PER_REV           5.08                    // 1tr
+#define M1_TRAVEL_PER_REV           2.1167                  // 1tr
 #define M1_MICROSTEPS               8                       // 1mi        1,2,4,8
 #define M1_POLARITY                 1                       // 1po        0=normal, 1=reversed
 #define M1_POWER_MODE               MOTOR_POWER_MODE        // 1pm        standard
@@ -99,7 +99,7 @@
 
 #define M2_MOTOR_MAP                AXIS_Y_EXTERNAL
 #define M2_STEP_ANGLE               1.8
-#define M2_TRAVEL_PER_REV           62
+#define M2_TRAVEL_PER_REV           59.9765
 #define M2_MICROSTEPS               8
 #define M2_POLARITY                 0
 #define M2_POWER_MODE               MOTOR_POWER_MODE
@@ -107,7 +107,7 @@
 
 #define M3_MOTOR_MAP                AXIS_Y_EXTERNAL
 #define M3_STEP_ANGLE               1.8
-#define M3_TRAVEL_PER_REV           62
+#define M3_TRAVEL_PER_REV           59.9765
 #define M3_MICROSTEPS               8
 #define M3_POLARITY                 1
 #define M3_POWER_MODE               MOTOR_POWER_MODE
@@ -115,7 +115,7 @@
 
 #define M4_MOTOR_MAP                AXIS_X_EXTERNAL
 #define M4_STEP_ANGLE               1.8
-#define M4_TRAVEL_PER_REV           62
+#define M4_TRAVEL_PER_REV           59.9765
 #define M4_MICROSTEPS               8
 #define M4_POLARITY                 1
 #define M4_POWER_MODE               MOTOR_POWER_MODE
@@ -123,48 +123,46 @@
 
 // *** axis settings **********************************************************************************
 
-#define JERK_MAX    500
-
 #define X_AXIS_MODE                 AXIS_STANDARD           // xam  see canonical_machine.h cmAxisMode for valid values
-#define X_VELOCITY_MAX              1600                    // xvm  G0 max velocity in mm/min. Phil uses 5000 mm/min. 
+#define X_VELOCITY_MAX              5000                    // xvm  G0 max velocity in mm/min. Phil uses 5000 mm/min. 
 #define X_FEEDRATE_MAX              X_VELOCITY_MAX          // xfr  G1 max feed rate in mm/min
 #define X_TRAVEL_MIN                0                       // xtn  minimum travel - used by soft limits and homing
-#define X_TRAVEL_MAX                400                     // xtm  maximum travel - used by soft limits and homing. Phil uses 300mm.
-#define X_JERK_MAX                  JERK_MAX                // xjm
+#define X_TRAVEL_MAX                360                     // xtm  maximum travel - used by soft limits and homing. Phil uses 300mm.
+#define X_JERK_MAX                  5000                    // xjm  mm/min^3 * 1 million
 #define X_JERK_HIGH_SPEED           X_JERK_MAX              // xjh
 #define X_HOMING_INPUT              1                       // xhi  input used for homing or 0 to disable
 #define X_HOMING_DIRECTION          0                       // xhd  0=search moves negative, 1= search moves positive
-#define X_SEARCH_VELOCITY           1000                    // xsv  move in negative direction. Phil uses 2000mm/min.
+#define X_SEARCH_VELOCITY           2000                    // xsv  move in negative direction. Phil uses 2000mm/min.
 #define X_LATCH_VELOCITY            100                     // xlv  mm/min
-#define X_LATCH_BACKOFF             10                      // xlb  mm. Phil uses 2mm.
-#define X_ZERO_BACKOFF              2                       // xzb  mm
+#define X_LATCH_BACKOFF             3                       // xlb  mm. Phil uses 2mm.
+#define X_ZERO_BACKOFF              3                       // xzb  mm
 
 #define Y_AXIS_MODE                 AXIS_STANDARD
-#define Y_VELOCITY_MAX              1600
+#define Y_VELOCITY_MAX              5000
 #define Y_FEEDRATE_MAX              Y_VELOCITY_MAX
 #define Y_TRAVEL_MIN                0
-#define Y_TRAVEL_MAX                175
-#define Y_JERK_MAX                  JERK_MAX
+#define Y_TRAVEL_MAX                410
+#define Y_JERK_MAX                  5000
 #define Y_JERK_HIGH_SPEED           Y_JERK_MAX
 #define Y_HOMING_INPUT              3
 #define Y_HOMING_DIRECTION          0
-#define Y_SEARCH_VELOCITY           1000
+#define Y_SEARCH_VELOCITY           3000
 #define Y_LATCH_VELOCITY            100
-#define Y_LATCH_BACKOFF             10
-#define Y_ZERO_BACKOFF              2
+#define Y_LATCH_BACKOFF             3
+#define Y_ZERO_BACKOFF              3
 
 #define Z_AXIS_MODE                 AXIS_STANDARD
-#define Z_VELOCITY_MAX              1000
+#define Z_VELOCITY_MAX              300
 #define Z_FEEDRATE_MAX              Z_VELOCITY_MAX
 #define Z_TRAVEL_MIN                0
-#define Z_TRAVEL_MAX                75
-#define Z_JERK_MAX                  JERK_MAX
+#define Z_TRAVEL_MAX                104
+#define Z_JERK_MAX                  50
 #define Z_JERK_HIGH_SPEED           Z_JERK_MAX
 #define Z_HOMING_INPUT              6
 #define Z_HOMING_DIRECTION          1
-#define Z_SEARCH_VELOCITY           600
+#define Z_SEARCH_VELOCITY           400
 #define Z_LATCH_VELOCITY            100
-#define Z_LATCH_BACKOFF             10
+#define Z_LATCH_BACKOFF             2
 #define Z_ZERO_BACKOFF              2
 
 // Rotary values are chosen to make the motor react the same as X for testing
