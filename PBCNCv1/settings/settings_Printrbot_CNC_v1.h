@@ -101,7 +101,7 @@
 #define M2_STEP_ANGLE               1.8
 #define M2_TRAVEL_PER_REV           59.9765
 #define M2_MICROSTEPS               8
-#define M2_POLARITY                 0
+#define M2_POLARITY                 1
 #define M2_POWER_MODE               MOTOR_POWER_MODE
 #define M2_POWER_LEVEL              0.75
 
@@ -109,7 +109,7 @@
 #define M3_STEP_ANGLE               1.8
 #define M3_TRAVEL_PER_REV           59.9765
 #define M3_MICROSTEPS               8
-#define M3_POLARITY                 1
+#define M3_POLARITY                 0
 #define M3_POWER_MODE               MOTOR_POWER_MODE
 #define M3_POWER_LEVEL              0.75
 
