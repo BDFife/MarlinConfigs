@@ -1062,54 +1062,86 @@
  */
 #if HAS_TRINAMIC
 
-  //#define R_SENSE           0.11  // R_sense resistor for SilentStepStick2130
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
+	
+	#if AXIS_IS_TMC(X)
+	  #define X_CURRENT          950  // rms current in mA. Multiply by 1.41 for peak current.
+  	#define X_MICROSTEPS        16  // 0..256
+		#define X_RSENSE					0.11	// R_sense resistor for SilentStepStick2130
+		#define X_CHAIN_POS					-1  // <=0 : Not chained. 1 : MCU MOSI connected. 2 : Next in chain, ...
+	#endif
+	
+	#if AXIS_IS_TMC(Y)
+		#define Y_CURRENT          950  // max current for EINSY RAMBO is 960mA
+  	#define Y_MICROSTEPS        16
+		#define Y_RSENSE					0.11
+		#define Y_CHAIN_POS					-1
+	#endif
+	
+	#if AXIS_IS_TMC(Z)		
+  	#define Z_CURRENT          950
+  	#define Z_MICROSTEPS        16
+		#define Z_RSENSE					0.11
+		#define Z_CHAIN_POS					-1
+	#endif
+	
+	#if AXIS_IS_TMC(X2)	
+	  #define X2_CURRENT         950
+	  #define X2_MICROSTEPS       16
+		#define X2_RSENSE					0.11
+		#define X2_CHAIN_POS				-1
+	#endif
 
-  #define X_CURRENT          950  // rms current in mA. Multiply by 1.41 for peak current.
-  #define X_MICROSTEPS        16  // 0..256
-	#define X_RSENSE					0.11
+	#if AXIS_IS_TMC(Y2)	
+	  #define Y2_CURRENT         950
+	  #define Y2_MICROSTEPS       16
+		#define Y2_RSENSE					0.11
+		#define Y2_CHAIN_POS				-1
+	#endif
+
+	#if AXIS_IS_TMC(Z2)
+	  #define Z2_CURRENT         950
+	  #define Z2_MICROSTEPS       16
+		#define Z2_RSENSE					0.11
+		#define Z2_CHAIN_POS		    -1
+	#endif
+
+	#if AXIS_IS_TMC(E0)
+	  #define E0_CURRENT         950
+  	#define E0_MICROSTEPS       16
+		#define E0_RSENSE					0.11
+		#define E0_CHAIN_POS				-1
+	#endif
+
+	#if AXIS_IS_TMC(E1)
+	  #define E1_CURRENT         950
+	  #define E1_MICROSTEPS       16
+		#define E1_RSENSE					0.11
+		#define E1_CHAIN_POS				-1
+	#endif	
+
+	#if AXIS_IS_TMC(E2)
+	  #define E2_CURRENT         950
+  	#define E2_MICROSTEPS       16
+		#define E2_RSENSE					0.11
+		#define E2_CHAIN_POS				-1
+	#endif
 	
-  #define Y_CURRENT          950  // max current for EINSY RAMBO is 960mA
-  #define Y_MICROSTEPS        16
-	#define Y_RSENSE					0.11
-	
-  #define Z_CURRENT          950
-  #define Z_MICROSTEPS        16
-	#define Z_RSENSE					0.11
-	
-  #define X2_CURRENT         950
-  #define X2_MICROSTEPS       16
-	#define X2_RSENSE					0.11
-	
-  #define Y2_CURRENT         950
-  #define Y2_MICROSTEPS       16
-	#define Y2_RSENSE					0.11
-	
-  #define Z2_CURRENT         950
-  #define Z2_MICROSTEPS       16
-	#define Z2_RSENSE					0.11
-	
-  #define E0_CURRENT         950
-  #define E0_MICROSTEPS       16
-	#define E0_RSENSE					0.11
-	
-  #define E1_CURRENT         950
-  #define E1_MICROSTEPS       16
-	#define E1_RSENSE					0.11
-	
-  #define E2_CURRENT         950
-  #define E2_MICROSTEPS       16
-	#define E2_RSENSE					0.11
-	
-  #define E3_CURRENT         950
-  #define E3_MICROSTEPS       16
-	#define E3_RSENSE					0.11
-	
-  #define E4_CURRENT         950
-  #define E4_MICROSTEPS       16
-	#define E4_RSENSE					0.11
-	
+	#if AXIS_IS_TMC(E3)
+		#define E3_CURRENT         950
+	  #define E3_MICROSTEPS       16
+		#define E3_RSENSE					0.11
+		#define E3_CHAIN_POS				-1
+	#endif
+
+	#if AXIS_IS_TMC(E4)	
+	  #define E4_CURRENT         950
+	  #define E4_MICROSTEPS       16
+		#define E4_RSENSE					0.11
+		#define E4_CHAIN_POS				-1
+	#endif	
+  
   /**
    * Use software SPI for TMC2130.
    * The default SW SPI pins are defined the respective pins files,
