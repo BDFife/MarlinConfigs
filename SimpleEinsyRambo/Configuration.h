@@ -12,8 +12,8 @@
 // build by the user have been successfully uploaded into firmware.
 #define STRING_CONFIG_H_AUTHOR "(Brian Fife, Simple Trinamic)" // Who made the changes.
 #define SHOW_BOOTSCREEN
-#define STRING_SPLASH_LINE1 0.0.6               // will be shown during bootup in line 1
-#define STRING_SPLASH_LINE2 SODESNE.COM         // will be shown during bootup in line 2
+//#define STRING_SPLASH_LINE1 0.0.6               // will be shown during bootup in line 1
+//#define STRING_SPLASH_LINE2 SODESNE.COM         // will be shown during bootup in line 2
 
 // @section machine
 
@@ -64,7 +64,6 @@
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
 
 // @section machine
-
 /**
  * Select your power supply here. Use 0 if you haven't connected the PS_ON_PIN
  *
@@ -74,22 +73,24 @@
  *
  * :{ 0:'No power switch', 1:'ATX', 2:'X-Box 360' }
  */
-#define POWER_SUPPLY 0
+//Apparently this isn't used anymore. 
+//#define POWER_SUPPLY 0
 
-#if POWER_SUPPLY > 0
+//#if POWER_SUPPLY > 0
 // Enable this option to leave the PSU off at startup.
 // Power to steppers and heaters will need to be turned on with M80.
 //#define PS_DEFAULT_OFF
 
-//#define AUTO_POWER_CONTROL        // Enable automatic control of the PS_ON pin
-#if ENABLED(AUTO_POWER_CONTROL)
-#define AUTO_POWER_FANS           // Turn on PSU if fans need power
-    #define AUTO_POWER_E_FANS
-    #define AUTO_POWER_CONTROLLERFAN
-    #define POWER_TIMEOUT 30
-  #endif
 
-#endif
+//#define AUTO_POWER_CONTROL        // Enable automatic control of the PS_ON pin
+//#if ENABLED(AUTO_POWER_CONTROL)
+//#define AUTO_POWER_FANS           // Turn on PSU if fans need power
+//    #define AUTO_POWER_E_FANS
+//    #define AUTO_POWER_CONTROLLERFAN
+//    #define POWER_TIMEOUT 30
+//  #endif
+//
+//#endif
 
 //===========================================================================
 //=============================Thermal Settings  ============================
