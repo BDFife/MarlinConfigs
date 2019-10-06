@@ -1113,8 +1113,26 @@
    * Use Trinamic's ultra quiet stepping mode.
    * When disabled, Marlin will use spreadCycle stepping mode.
    */
-  #define STEALTHCHOP
-
+  #define STEALTHCHOP_XY
+  #define STEALTHCHOP_Z
+  #define STEALTHCHOP_E
+  
+   /**
+   * Optimize spreadCycle chopper parameters by using predefined parameter sets
+   * or with the help of an example included in the library.
+   * Provided parameter sets are
+   * CHOPPER_DEFAULT_12V
+   * CHOPPER_DEFAULT_19V
+   * CHOPPER_DEFAULT_24V
+   * CHOPPER_DEFAULT_36V
+   * CHOPPER_PRUSAMK3_24V // Imported parameters from the official Prusa firmware for MK3 (24V)
+   * CHOPPER_MARLIN_119   // Old defaults from Marlin v1.1.9
+   *
+   * Define you own with
+   * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
+   */
+  #define CHOPPER_TIMING CHOPPER_DEFAULT_12V
+  
   /**
    * Monitor Trinamic TMC2130 and TMC2208 drivers for error conditions,
    * like overtemperature and short to ground. TMC2208 requires hardware serial.
@@ -1195,6 +1213,12 @@
     #define CALIBRATION_CURRENT 250
     #define CALIBRATION_EXTRA_HEIGHT 10
   #endif
+
+	/**
+   * Beta feature!
+   * Create a 50/50 square wave step pulse optimal for stepper drivers.
+   */
+  //#define SQUARE_WAVE_STEPPING
 
   /**
    * You can set your own advanced settings by filling in predefined functions.
