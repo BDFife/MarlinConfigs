@@ -1062,43 +1062,54 @@
  */
 #if HAS_TRINAMIC
 
-  #define R_SENSE           0.11  // R_sense resistor for SilentStepStick2130
+  //#define R_SENSE           0.11  // R_sense resistor for SilentStepStick2130
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
   #define X_CURRENT          950  // rms current in mA. Multiply by 1.41 for peak current.
   #define X_MICROSTEPS        16  // 0..256
-
+	#define X_RSENSE					0.11
+	
   #define Y_CURRENT          950  // max current for EINSY RAMBO is 960mA
   #define Y_MICROSTEPS        16
-
+	#define Y_RSENSE					0.11
+	
   #define Z_CURRENT          950
   #define Z_MICROSTEPS        16
-
+	#define Z_RSENSE					0.11
+	
   #define X2_CURRENT         950
   #define X2_MICROSTEPS       16
-
+	#define X2_RSENSE					0.11
+	
   #define Y2_CURRENT         950
   #define Y2_MICROSTEPS       16
-
+	#define Y2_RSENSE					0.11
+	
   #define Z2_CURRENT         950
   #define Z2_MICROSTEPS       16
-
+	#define Z2_RSENSE					0.11
+	
   #define E0_CURRENT         950
   #define E0_MICROSTEPS       16
-
+	#define E0_RSENSE					0.11
+	
   #define E1_CURRENT         950
   #define E1_MICROSTEPS       16
-
+	#define E1_RSENSE					0.11
+	
   #define E2_CURRENT         950
   #define E2_MICROSTEPS       16
-
+	#define E2_RSENSE					0.11
+	
   #define E3_CURRENT         950
   #define E3_MICROSTEPS       16
-
+	#define E3_RSENSE					0.11
+	
   #define E4_CURRENT         950
   #define E4_MICROSTEPS       16
-
+	#define E4_RSENSE					0.11
+	
   /**
    * Use software SPI for TMC2130.
    * The default SW SPI pins are defined the respective pins files,
