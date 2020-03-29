@@ -1,22 +1,22 @@
-; == Initialize == 
-G21       ;use mm as units 
+; Starting gcode for use with Simplify3D
+; == Initialize ==
+G21       ;use mm as units
 G90       ;absolute positioning
 M82       ;set extruder to absolute mode
+M140 S[bed0_temperature]  ;start warming up bed without blocking next commands
 ; == Home Printer ==
 G28 X0 Y0 ;home X/Y
-G0 X50 Y50 F1200 ;move to mid-plate before probing Z
-G28 Z0    ;home Z
+G0 X210 Y130 F1200 ;move to mid-plate before probing Z
+G28 Z0  ;home Z
 ; == Tram == 
 G29       ;initiate auto bed leveling sequence
 ; == Heat == 
-M190 S{material_bed_temperature} ;pause until print bed at temp
-M109 S{material_print_temperature} ;pause until hotend at temp
+M190 S[bed0_temperature]  ;pause until print bed at temp
+M109 S[extruder0_temperature] ;pause until hotend at temp
 ; == Prime == 
 G92 E0 ;reset extruder origin
-G0 X10 Y145 Z0.3 F6000;travel to X=10mm, Y=145mm, Z=0.3mm
-G1 X200 E12 F1200 ;extrude 12mm of filament while moving to X=200mm
-G0 Y150 F6000;travel to Y=150
-G1 X110 E18 F1200 ;extrude 6mm more filament while moving back to X=110mm
-G0 Z1 ;raise to Z=1mm
+G0 X20 Y15 Z0.4 F6000 ;travel to x=20 y=15 z=0.4mm
+G1 X400 E24 F1200 ;extrude 24mm of filament while moving to X=400mm
+G0 Z1 ;raise toolhead to 1mm
 G92 E0 ;reset extruder origin
 ; == Start Print ==
