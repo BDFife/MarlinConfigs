@@ -3,13 +3,16 @@
 G21       ;use mm as units
 G90       ;absolute positioning
 M82       ;set extruder to absolute mode
+; If more than one temperature point is saved in the simplify config, this will fail.
 M140 S[bed0_temperature]  ;start warming up bed without blocking next commands
 ; == Home Printer ==
 G28 X0 Y0 ;home X/Y
 G0 X210 Y130 F1200 ;move to mid-plate before probing Z
 G28 Z0  ;home Z
 ; == Tram == 
-G29       ;initiate auto bed leveling sequence
+; G29 is not issued here. System assumes a G29 has been run in advance or
+; a mesh saved to EEPROM via the M500 command.
+M420 S1 ; activate bed leveling; load saved bed level profile from EEPROM. 
 ; == Heat == 
 M190 S[bed0_temperature]  ;pause until print bed at temp
 M109 S[extruder0_temperature] ;pause until hotend at temp
